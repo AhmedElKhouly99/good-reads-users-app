@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './componenets/header';
+import Home from './componenets/home';
 import Login from './componenets/Login';
 import SignUp from './componenets/SignUp';
 
@@ -19,10 +19,11 @@ function App() {
 
     <BrowserRouter>
     <Routes>
-      <Route path='/' element={
+      <Route path='/' element={<Home />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/login' element={
         <Login updateTokenHandler={updateTokenHandler}></Login>
       }/>
-      <Route path='/home' element={<Header/>} />
       <Route path='/signup' element={<SignUp/>} />
     </Routes>
     </BrowserRouter>
