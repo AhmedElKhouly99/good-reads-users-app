@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './componenets/header';
+import Login from './componenets/Login';
+import SignUp from './componenets/SignUp';
 
 function App() {
+  const [token, setToken] = useState(JSON.stringify(localStorage.getItem("token")));
+
+  const updateTokenHandler = (val)=>{
+    localStorage.setItem('token', val.token)
+    setToken(val)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="App container">
+
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={
+        <Login updateTokenHandler={updateTokenHandler}></Login>
+      }/>
+      <Route path='/home' element={<Header/>} />
+      <Route path='/signup' element={<SignUp/>} />
+    </Routes>
+    </BrowserRouter>
+
+
+
+
+
+
+      {/* <SignUp></SignUp> */}
+      {/* <Login updateTokenHandler={updateTokenHandler}></Login> */}
+      {/* <Header></Header> */}
+     </div>
   );
 }
 
