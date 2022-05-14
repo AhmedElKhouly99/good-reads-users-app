@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './componenets/home';
 import Login from './componenets/Login';
+import NotFound from './componenets/notFound';
 import SignUp from './componenets/SignUp';
 
 function App() {
@@ -25,17 +26,10 @@ function App() {
         <Login updateTokenHandler={updateTokenHandler}></Login>
       }/>
       <Route path='/signup' element={<SignUp/>} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
     </BrowserRouter>
 
-
-
-
-
-
-      {/* <SignUp></SignUp> */}
-      {/* <Login updateTokenHandler={updateTokenHandler}></Login> */}
-      {/* <Header></Header> */}
      </div>
   );
 }
