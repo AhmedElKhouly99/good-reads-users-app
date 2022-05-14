@@ -1,16 +1,19 @@
 // import logo from './logo.svg';
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import Home from './componenets/home';
 import Login from './componenets/Login';
 import NotFound from './componenets/notFound';
 import SignUp from './componenets/SignUp';
+import Popular from './componenets/Popular';
 
 function App() {
   const [token, setToken] = useState(JSON.stringify(localStorage.getItem("token")));
 
-  const updateTokenHandler = (val)=>{
+
+  const updateTokenHandler = (val) => {
     localStorage.setItem('token', val.token)
     setToken(val)
   }
@@ -18,19 +21,20 @@ function App() {
   return (
     <div className="App container">
 
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/login' element={
-        <Login updateTokenHandler={updateTokenHandler}></Login>
-      }/>
-      <Route path='/signup' element={<SignUp/>} />
-      <Route path='*' element={<NotFound />} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          {/* <Route path='/home' element={<Home popularBooks={popularBooks} />} /> */}
+          {/* <Route path='/home' element={<Home />} /> */}
+          <Route path='/login' element={
+            <Login updateTokenHandler={updateTokenHandler}></Login>
+          } />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
 
-     </div>
+    </div>
   );
 }
 
