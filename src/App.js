@@ -9,6 +9,8 @@ import NotFound from './componenets/notFound';
 import SignUp from './componenets/SignUp';
 import Popular from './componenets/Popular';
 import UserHome from './componenets/UserHome';
+import Categories from './componenets/Categories';
+import Books from './componenets/Books';
 
 function App() {
   const [token, setToken] = useState(JSON.stringify(localStorage.getItem("token")));
@@ -20,13 +22,14 @@ function App() {
   }
 
   return (
-    <div className="App container">
+    <div className="App ">
 
       <BrowserRouter>
         <Routes>
           <Route path='/' element={token?<UserHome/>:<Home />} />
           {/* <Route path='/home' element={<Home popularBooks={popularBooks} />} /> */}
-          {/* <Route path='/home' element={<UserHome />} /> */}
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/books' element={<Books />} />
           <Route path='/login' element={
             <Login updateTokenHandler={updateTokenHandler}></Login>
           } />
