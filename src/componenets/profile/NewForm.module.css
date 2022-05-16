@@ -1,0 +1,71 @@
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control .myprofilelabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-right: 35%;
+}
+
+.control .myprofileinput {
+  display: block;
+  font: inherit;
+  border-radius: 15px;
+  border: 1px solid rgb(138, 144, 199);
+  padding: 0.2rem;
+  margin-left: 30%;
+  width: 40%;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.actions .myprofileupdatebutton {
+  font: inherit;
+  cursor: pointer;
+  background-color: #66072cec;
+  color: white;
+  /* padding: 0.5rem 1.5rem; */
+  border: 1px solid #77002e;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 20%;
+  margin-bottom: 3%;
+  width: 100px;
+}
+
+/* .actions button:hover,
+.actions button:active {
+  background-color: #a50e48;
+  border-color: #a50e48;
+} */
+
+.myprofilebutton {
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30%;
+  margin-left: 40%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.update {
+  margin-bottom: 10%;
+}
+
+.myprofileimg {
+  width: 600px;
+  height: 200px;
+  text-align: center;
+  margin-left: 0%;
+  margin-top: 1%;
+}
+
+.myProfileIcon {
+  width: 25px;
+  height: 25px;
+}
